@@ -1,0 +1,38 @@
+{% extends 'site/base.html' %}
+
+{% block body %}
+
+
+<div class="container">
+
+		<hr>
+
+      <div class="row">
+
+				<div id="content">
+					<h3>Type anything:</h3>
+						<p>
+							<form action="/load">
+							<input type="text" name="anything" placeholder="Type anything here">
+							<input type="submit" class="button" name="anything_submit" value="Submit" onclick="loading();">
+							</form>
+						</p>
+				</div>    
+			</div>    
+
+
+      {% if change_colour is defined and change_colour is sameas true %}
+        <div id="output" class="blue-primary">
+      {% else %}
+        <div id="output">
+      {% endif %}
+
+      {% for elm in output %}
+      <li> {{elm}} </li>
+      {% endfor %}
+
+        <div>
+</div>    
+
+{% endblock %}
+
